@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Clinic Management System Design System
+   Medical-grade aesthetic with trust-inspiring teal primary
+   All colors in HSL format */
+
+@layer base {
+  :root {
+    /* Core backgrounds */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    /* Cards and surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    /* Popovers and dropdowns */
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Primary - Medical Teal */
+    --primary: 174 62% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft blue-gray */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 215 25% 25%;
+
+    /* Muted elements */
+    --muted: 210 15% 95%;
+    --muted-foreground: 215 15% 50%;
+
+    /* Accent - Light teal */
+    --accent: 174 45% 94%;
+    --accent-foreground: 174 62% 30%;
+
+    /* Destructive - Clear red */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 174 62% 38%;
+
+    --radius: 0.5rem;
+
+    /* Status colors */
+    --status-pending: 38 92% 50%;
+    --status-pending-foreground: 38 92% 15%;
+    --status-pending-bg: 38 92% 95%;
+    
+    --status-confirmed: 142 71% 45%;
+    --status-confirmed-foreground: 142 71% 15%;
+    --status-confirmed-bg: 142 71% 95%;
+    
+    --status-cancelled: 0 72% 51%;
+    --status-cancelled-foreground: 0 72% 15%;
+    --status-cancelled-bg: 0 72% 96%;
+    
+    --status-postponed: 217 91% 60%;
+    --status-postponed-foreground: 217 91% 15%;
+    --status-postponed-bg: 217 91% 96%;
+
+    /* Sidebar */
+    --sidebar-background: 215 25% 15%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 174 62% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 25% 20%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 215 25% 22%;
+    --sidebar-ring: 174 62% 45%;
+
+    /* Chart colors for dashboard */
+    --chart-1: 174 62% 38%;
+    --chart-2: 217 91% 60%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 280 65% 60%;
+  }
+
+  .dark {
+    --background: 215 25% 10%;
+    --foreground: 210 20% 95%;
+    --card: 215 25% 12%;
+    --card-foreground: 210 20% 95%;
+    --popover: 215 25% 12%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 174 62% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 20% 90%;
+    --muted: 215 25% 18%;
+    --muted-foreground: 215 15% 60%;
+    --accent: 174 45% 20%;
+    --accent-foreground: 174 62% 75%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 174 62% 45%;
+    --sidebar-background: 215 30% 8%;
+    --sidebar-foreground: 210 20% 80%;
+    --sidebar-primary: 174 62% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 25% 15%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 215 25% 15%;
+    --sidebar-ring: 174 62% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  .status-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  
+  .status-pending {
+    background-color: hsl(var(--status-pending-bg));
+    color: hsl(var(--status-pending-foreground));
+  }
+  
+  .status-confirmed {
+    background-color: hsl(var(--status-confirmed-bg));
+    color: hsl(var(--status-confirmed-foreground));
+  }
+  
+  .status-cancelled {
+    background-color: hsl(var(--status-cancelled-bg));
+    color: hsl(var(--status-cancelled-foreground));
+  }
+  
+  .status-postponed {
+    background-color: hsl(var(--status-postponed-bg));
+    color: hsl(var(--status-postponed-foreground));
+  }
+
+  .period-header {
+    @apply flex items-center gap-2 px-4 py-3 bg-muted/50 border-b border-border font-medium text-sm text-muted-foreground;
+  }
+}
